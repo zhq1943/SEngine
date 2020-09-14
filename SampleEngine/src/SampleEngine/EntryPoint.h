@@ -7,7 +7,10 @@ extern SEngine::CApplication* SEngine::CreateApplication();
 
 int main(int argc, char** argv)
 {
-	printf("SEngne Run!\n");
+	SEngine::CLog::Init();
+	SE_CORE_WARM("Hello this is Core Log");
+	SE_INFO("hello this is Cline");
+
 	auto app = SEngine::CreateApplication();
 	app->Run();
 	delete app;

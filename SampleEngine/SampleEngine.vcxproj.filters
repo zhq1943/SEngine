@@ -4,6 +4,9 @@
     <Filter Include="SampleEngine">
       <UniqueIdentifier>{3D7E1022-29E1-9FC6-D266-D87CBEA86B49}</UniqueIdentifier>
     </Filter>
+    <Filter Include="SampleEngine\Events">
+      <UniqueIdentifier>{8123FCAD-ED84-D9BB-76F2-1F6EE252107B}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\SEngine.h" />
@@ -19,6 +22,21 @@
     <ClInclude Include="src\SampleEngine\EntryPoint.h">
       <Filter>SampleEngine</Filter>
     </ClInclude>
+    <ClInclude Include="src\SampleEngine\Events\ApplicationEvent.h">
+      <Filter>SampleEngine\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SampleEngine\Events\Event.h">
+      <Filter>SampleEngine\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SampleEngine\Events\KeyEvent.h">
+      <Filter>SampleEngine\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SampleEngine\Events\MouseEvent.h">
+      <Filter>SampleEngine\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\sepch.h" />
+    <ClInclude Include="src\SampleEngine\Window.h" />
+    <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\SampleEngine\CApplication.cpp">
@@ -27,5 +45,7 @@
     <ClCompile Include="src\SampleEngine\CLog.cpp">
       <Filter>SampleEngine</Filter>
     </ClCompile>
+    <ClCompile Include="src\sepch.cpp" />
+    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
   </ItemGroup>
 </Project>

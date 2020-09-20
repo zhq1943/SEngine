@@ -1,0 +1,6 @@
+[submodule "SampleEngine/vendor/spdlog"]
+	path = SampleEngine/vendor/spdlog
+	url = https://github.com/gabime/spdlog
+[submodule "SampleEngine/vendor/GLFW"]
+	path = SampleEngine/vendor/GLFW
+	url = https://github.com/TheCherno/glfw

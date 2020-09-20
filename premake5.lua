@@ -10,6 +10,12 @@ workspace "SampleEngine"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+--Include directories relative to root folder
+IncludeDir = {}
+IncludeDir["GLFW"] = "SampleEngine/vendor/GLFW/include"
+
+include "SampleEngine/vendor/GLFW/"
+
 project "SampleEngine"
 	location "SampleEngine"
 	kind "SharedLib"
@@ -17,6 +23,9 @@ project "SampleEngine"
 
 	targetdir ("Output/bin/"..outputdir.."/%{prj.name}")
 	objdir ("Output/bin_int/"..outputdir.."/%{prj.name}")
+
+	pchheader "sepch.h"
+	pchsource "SampleEngine/src/sepch.cpp"
 
 	files
 	{
@@ -26,8 +35,16 @@ project "SampleEngine"
 
 	includedirs
 	{
-		"%{prj.name}/vendor/spdlog/include"
+		"%{prj.name}/src",
+		"%{prj.name}/vendor/spdlog/include",
+        "%{IncludeDir.GLFW}"
 	}
+    
+    links
+    {
+        "GLFW",
+        "opengl32.lib"
+    }
 
 	filter "system:windows"
 		cppdialect "c++17"

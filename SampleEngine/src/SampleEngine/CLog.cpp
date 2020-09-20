@@ -1,3 +1,4 @@
+#include"sepch.h"
 #include "CLog.h"
 
 namespace SEngine

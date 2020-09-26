@@ -3,3 +3,7 @@
 Output/*
 ThirdPart/*
 vendor/*
+SampleEngine/vendor/GLAD/bin-int/*
+SampleEngine/vendor/GLAD/bin/*
+SampleEngine/vendor/GLFW/bin-int/*
+SampleEngine/vendor/GLFW/bin/*

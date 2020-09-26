@@ -8,3 +8,5 @@
 #include"SampleEngine/CApplication.h"
 
 #include"SampleEngine/EntryPoint.h"
+
+#include"SampleEngine/CLayer.h"

@@ -2,6 +2,8 @@
 #include"Core.h"
 #include"Events/Event.h"
 #include"Window.h"
+#include"Events/ApplicationEvent.h"
+#include"CLayerStack.h"
 namespace SEngine {
 
 
@@ -13,9 +15,17 @@ namespace SEngine {
 
 		void Run();
 
+		void OnEvent(Event& event);
+		void PushLayer(CLayer* layer);
+		void PopOver(CLayer* layer);
 	private:
+
+		bool OnWindowClose(WindowCloseEvent& e);
+
+
 		std::unique_ptr<Window> m_Window;
 		bool m_Running = true;
+		CLayerStack m_LayerStack;
 	};
 
 	CApplication* CreateApplication();

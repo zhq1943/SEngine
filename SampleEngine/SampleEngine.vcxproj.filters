@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Filter Include="Platform">
+      <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\Windows">
+      <UniqueIdentifier>{64FBD71A-50F4-F66C-7926-DCF1657ED678}</UniqueIdentifier>
+    </Filter>
     <Filter Include="SampleEngine">
       <UniqueIdentifier>{3D7E1022-29E1-9FC6-D266-D87CBEA86B49}</UniqueIdentifier>
     </Filter>
@@ -9,8 +15,17 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
+      <Filter>Platform\Windows</Filter>
+    </ClInclude>
     <ClInclude Include="src\SEngine.h" />
     <ClInclude Include="src\SampleEngine\CApplication.h">
+      <Filter>SampleEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SampleEngine\CLayer.h">
+      <Filter>SampleEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SampleEngine\CLayerStack.h">
       <Filter>SampleEngine</Filter>
     </ClInclude>
     <ClInclude Include="src\SampleEngine\CLog.h">
@@ -34,18 +49,27 @@
     <ClInclude Include="src\SampleEngine\Events\MouseEvent.h">
       <Filter>SampleEngine\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\SampleEngine\Window.h">
+      <Filter>SampleEngine</Filter>
+    </ClInclude>
     <ClInclude Include="src\sepch.h" />
-    <ClInclude Include="src\SampleEngine\Window.h" />
-    <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
+      <Filter>Platform\Windows</Filter>
+    </ClCompile>
     <ClCompile Include="src\SampleEngine\CApplication.cpp">
+      <Filter>SampleEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SampleEngine\CLayer.cpp">
+      <Filter>SampleEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SampleEngine\CLayerStack.cpp">
       <Filter>SampleEngine</Filter>
     </ClCompile>
     <ClCompile Include="src\SampleEngine\CLog.cpp">
       <Filter>SampleEngine</Filter>
     </ClCompile>
     <ClCompile Include="src\sepch.cpp" />
-    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
   </ItemGroup>
 </Project>

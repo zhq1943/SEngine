@@ -11,8 +11,12 @@
 
 namespace SEngine {
 
+    CApplication* CApplication::s_Instance = nullptr;
+
 	CApplication::CApplication()
 	{
+		SE_CORE_ASSERT(s_Instance, "Application is exist");
+		s_Instance = this;
 		m_Window = std::unique_ptr<Window>(Window::Create()); 
 		m_Window->SetEventCallback(BIND_EVENT_FN(OnEvent));
 	}
@@ -24,11 +28,18 @@ namespace SEngine {
 	void CApplication::PushLayer(CLayer* layer)
 	{
 		m_LayerStack.PushLayer(layer);
+		layer->OnAttach();
 	}
 
 	void CApplication::PopOver(CLayer* layer)
 	{
 		m_LayerStack.PopOverLayer(layer);
+	}
+
+	void CApplication::PushOverLayer(CLayer* layer)
+	{
+		m_LayerStack.PushOverLay(layer);
+		layer->OnAttach();
 	}
 
 	void CApplication::OnEvent(Event& event)

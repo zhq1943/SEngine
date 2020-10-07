@@ -64,10 +64,10 @@ namespace SEngine {
 		int m_Button;
 	};
 
-	class SE_API MosueButtonPressedEvent : public MouseButtonEvent
+	class SE_API MouseButtonPressedEvent : public MouseButtonEvent
 	{
 	public :
-		MosueButtonPressedEvent(int button)
+		MouseButtonPressedEvent(int button)
 			:MouseButtonEvent(button) {};
 
 		std::string ToString() const override
@@ -80,10 +80,10 @@ namespace SEngine {
 		EVENT_CLASS_TYPE(MouseButtonPressed)
 	 };
 
-	class SE_API MosueButtonReleasedEvent : public MouseButtonEvent
+	class SE_API MouseButtonReleasedEvent : public MouseButtonEvent
 	{
 	public:
-		MosueButtonReleasedEvent(int button)
+		MouseButtonReleasedEvent(int button)
 			:MouseButtonEvent(button) {};
 
 		std::string ToString() const override

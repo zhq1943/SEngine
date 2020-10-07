@@ -53,6 +53,8 @@
       <Filter>SampleEngine</Filter>
     </ClInclude>
     <ClInclude Include="src\sepch.h" />
+    <ClInclude Include="src\SampleEngine\ImGui\ImGuiLayer.h" />
+    <ClInclude Include="src\Platform\OpenGL\imgui_impl_opengl3.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
@@ -71,5 +73,7 @@
       <Filter>SampleEngine</Filter>
     </ClCompile>
     <ClCompile Include="src\sepch.cpp" />
+    <ClCompile Include="src\SampleEngine\ImGui\ImGuiLayer.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\imgui_impl_opengl3.cpp" />
   </ItemGroup>
 </Project>

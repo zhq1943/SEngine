@@ -18,6 +18,10 @@ namespace SEngine {
 		void OnEvent(Event& event);
 		void PushLayer(CLayer* layer);
 		void PopOver(CLayer* layer);
+		void PushOverLayer(CLayer* layer);
+
+		inline static CApplication& GetApplication() { return *s_Instance; };
+		inline Window& GetWindow() { return *m_Window; };
 	private:
 
 		bool OnWindowClose(WindowCloseEvent& e);
@@ -26,6 +30,9 @@ namespace SEngine {
 		std::unique_ptr<Window> m_Window;
 		bool m_Running = true;
 		CLayerStack m_LayerStack;
+
+	private:
+		static CApplication* s_Instance;
 	};
 
 	CApplication* CreateApplication();

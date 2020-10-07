@@ -28,6 +28,7 @@ public:
 	Sandbox()
 	{
 		PushLayer(new ExampleLayer());
+		PushOverLayer(new SEngine::ImGuiLayer());
 	};
 	~Sandbox()
 	{};

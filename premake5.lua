@@ -14,9 +14,11 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 IncludeDir = {}
 IncludeDir["GLFW"] = "SampleEngine/vendor/GLFW/include"
 IncludeDir["GLAD"] = "SampleEngine/vendor/GLAD/include"
+IncludeDir["ImGui"] = "SampleEngine/vendor/ImGui" 
 
 include "SampleEngine/vendor/GLFW/"
 include "SampleEngine/vendor/GLAD/"
+include "SampleEngine/vendor/ImGui/"
 
 
 project "SampleEngine"
@@ -41,13 +43,15 @@ project "SampleEngine"
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
         "%{IncludeDir.GLFW}",
-        "%{IncludeDir.GLAD}"
+        "%{IncludeDir.GLAD}",
+        "%{IncludeDir.ImGui}"
 	}
     
     links
     {
         "GLFW",
         "GLAD",
+        "ImGui",
         "opengl32.lib"
     }
 
@@ -101,6 +105,7 @@ project "SandBox"
 	{
 		"SampleEngine/vendor/spdlog/include",
         "SampleEngine/vendor/GLAD/include",
+        "SampleEngine/vendor/ImGui",
 		"SampleEngine/src"
 	}
 

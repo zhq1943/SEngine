@@ -10,6 +10,10 @@
 #error Only from windows
 #endif
 
+#ifdef SE_DEBUG
+#define SE_ENABLE_ASSERTS
+#endif // SE_DEBUG
+
 
 #ifdef SE_ENABLE_ASSERTS
     #define SE_ASSERT(x,...){if(!(x)) {SE_ERROR("Assertion Failed:{0}",__VA_ARGS__);__debugbreak();}}

@@ -13,12 +13,17 @@ public:
 
 	void OnUpdate() override
 	{
-		SE_INFO("ExampleLayer::Update");
+		//SE_INFO("ExampleLayer::Update");
 	};
 
 	void OnEvent(SEngine::Event& event) override
 	{
-		SE_TRACE("{0}", event);
+		//SE_TRACE("{0}", event);
+		if (event.GetEventType() == SEngine::EventType::KeyPressed)
+		{
+			SEngine::KeyPressedEvent& keyEvent = (SEngine::KeyPressedEvent&)event;
+			SE_TRACE("{0}",(char)keyEvent.GetKeyCode());
+		}
 	}
 };
 

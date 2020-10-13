@@ -7,6 +7,8 @@
 #include<GLFW/glfw3.h>
 #include<glad/glad.h>
 
+#include"Input.h"
+
 #define BIND_EVENT_FN(x) std::bind(&CApplication::x,this,std::placeholders::_1)
 
 namespace SEngine {
@@ -15,7 +17,7 @@ namespace SEngine {
 
 	CApplication::CApplication()
 	{
-		SE_CORE_ASSERT(s_Instance, "Application is exist");
+		//SE_CORE_ASSERT(s_Instance, "Application is exist");
 		s_Instance = this;
 		m_Window = std::unique_ptr<Window>(Window::Create()); 
 		m_Window->SetEventCallback(BIND_EVENT_FN(OnEvent));
@@ -78,6 +80,8 @@ namespace SEngine {
 			{
 				layer->OnUpdate();
 			}
+
+			Input::IsKeyPressed(GLFW_KEY_TAB);
 
 			m_Window->OnUpdate();
 		}

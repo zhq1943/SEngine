@@ -12,3 +12,7 @@
 #include"SampleEngine/CLayer.h"
 
 #include"SampleEngine/ImGui/ImGuiLayer.h"
+
+#include"SampleEngine/Input.h"
+#include"SampleEngine/KeyCode.h"
+#include"SampleEngine/MouseButtonCode.h"

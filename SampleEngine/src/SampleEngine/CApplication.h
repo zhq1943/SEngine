@@ -22,6 +22,7 @@ namespace SEngine {
 
 		inline static CApplication& GetApplication() { return *s_Instance; };
 		inline Window& GetWindow() { return *m_Window; };
+
 	private:
 
 		bool OnWindowClose(WindowCloseEvent& e);

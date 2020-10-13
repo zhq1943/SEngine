@@ -173,4 +173,5 @@ namespace SEngine {
 	{
 		return m_Data.VSync;
 	}
+
 }

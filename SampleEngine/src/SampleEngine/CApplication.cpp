@@ -21,6 +21,8 @@ namespace SEngine {
 		s_Instance = this;
 		m_Window = std::unique_ptr<Window>(Window::Create()); 
 		m_Window->SetEventCallback(BIND_EVENT_FN(OnEvent));
+		m_imGuiLayer = new ImGuiLayer();
+		PushOverLayer(m_imGuiLayer);
 	}
 
 	CApplication::~CApplication()
@@ -81,7 +83,14 @@ namespace SEngine {
 				layer->OnUpdate();
 			}
 
-			Input::IsKeyPressed(GLFW_KEY_TAB);
+			m_imGuiLayer->Begin();
+			for (CLayer* layer : m_LayerStack)
+			{
+				layer->OnImGuiRender();
+			}
+			m_imGuiLayer->End();
+
+			//Input::IsKeyPressed(GLFW_KEY_TAB);
 
 			m_Window->OnUpdate();
 		}

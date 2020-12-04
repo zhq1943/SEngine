@@ -22,6 +22,6 @@ namespace SEngine {
 
 	private:
 		std::vector<CLayer*> m_Layers;
-		std::vector<CLayer*>::iterator m_LayerInsert;
+		unsigned int m_LayerInsertIndex = 0;
 	};
 }

@@ -1,9 +1,12 @@
 #pragma once
 #include"Core.h"
-#include"Events/Event.h"
+
 #include"Window.h"
-#include"Events/ApplicationEvent.h"
-#include"CLayerStack.h"
+#include"SampleEngine/Events/Event.h"
+#include"SampleEngine/Events/ApplicationEvent.h"
+
+#include"SampleEngine/CLayerStack.h"
+#include"SampleEngine/ImGui/ImGuiLayer.h"
 namespace SEngine {
 
 
@@ -29,6 +32,7 @@ namespace SEngine {
 
 
 		std::unique_ptr<Window> m_Window;
+		ImGuiLayer* m_imGuiLayer;
 		bool m_Running = true;
 		CLayerStack m_LayerStack;
 

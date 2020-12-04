@@ -4,12 +4,14 @@
 #include<memory>
 
 
+
 class ExampleLayer :public SEngine::CLayer
 {
 public:
 	ExampleLayer()
 		:CLayer("Example")
-	{};
+	{
+	};
 
 	void OnUpdate() override
 	{
@@ -33,7 +35,6 @@ public:
 	Sandbox()
 	{
 		PushLayer(new ExampleLayer());
-		PushOverLayer(new SEngine::ImGuiLayer());
 	};
 	~Sandbox()
 	{};
